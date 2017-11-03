@@ -1,0 +1,25 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Invites</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="card-background-page">
+  <ion-list no-borders>
+    <ion-item *ngFor="let invite of invitations | async">
+      <ion-label>{{invite.title}}</ion-label>
+
+      <button color="dark" ion-button clear small item-end (click)="declineInvite(invite)">
+        <div [class.card-subtitle]="isMobile" [class.hideElement]="isMobile"> Decline </div>
+        <ion-icon name="close-circle" [class.hideElement]="!isMobile"></ion-icon>
+      </button>
+      <button color="dark" ion-button clear small item-end (click)="acceptInvite(invite)">
+        <div [class.card-subtitle]="isMobile" [class.hideElement]="isMobile"> Accept </div>
+        <ion-icon name="checkmark-circle" [class.hideElement]="!isMobile"></ion-icon>
+      </button>
+    </ion-item>
+  </ion-list>
+</ion-content>

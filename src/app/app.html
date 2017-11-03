@@ -1,1 +1,33 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-split-pane when="xl">
+    <ion-menu [content]="content">
+
+        <div class="centervertical">
+          <button ion-button large block clear icon-only [class.padbuttons]="isMobile" (click)="gotToInvites()" >
+            <ion-icon name="people" color="light"></ion-icon><ion-badge id="invite-count-badge" *ngIf="availableInvites > 0" >{{availableInvites}}</ion-badge>
+          </button>
+
+          <button ion-button large block clear icon-only (click)="navigateTo('Experiences')" [class.padbuttons]="isMobile">
+            <ion-icon name="albums" color="light"></ion-icon>
+          </button>
+
+          <button ion-button large block clear icon-only (click)="navigateTo('Contacts')" [class.padbuttons]="isMobile">
+            <ion-icon name="contacts" color="light"></ion-icon>
+          </button>
+          
+          <button ion-button large block clear icon-only [class.padbuttons]="isMobile">
+            <ion-icon name="search" color="light"></ion-icon>
+          </button>
+
+          <button ion-button large block clear icon-only (click)="logout()" [class.padbuttons]="isMobile" *ngIf="isAuthenticated">
+              <ion-icon name="log-out" color="light"></ion-icon>
+            </button>
+
+          <button ion-button large block clear icon-only (click)="navigateTo('SignIn')" [class.padbuttons]="isMobile" *ngIf="!isAuthenticated" >
+            <ion-icon name="log-in" color="light"></ion-icon>
+          </button>
+        </div>
+
+    </ion-menu>
+    <!-- the main content -->
+    <ion-nav [root]="rootPage" main #content></ion-nav>
+</ion-split-pane>

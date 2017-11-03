@@ -1,26 +1,28 @@
-This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
+A simple app to share pictures with people from a shared event.
 
-## How to use this template
+## How to use
 
-*This template does not work on its own*. The shared files for each starter are found in the [ionic2-app-base repo](https://github.com/ionic-team/ionic2-app-base).
+You can run this as a web app by running 
+```
+ionic serve 
+``` 
 
-To use this template, either create a new ionic project using the ionic node.js utility, or copy the files from this repository into the [Starter App Base](https://github.com/ionic-team/ionic2-app-base).
-
-### With the Ionic CLI:
-
-Take the name after `ionic2-starter-`, and that is the name of the template to be used when using the `ionic start` command below:
-
-```bash
-$ sudo npm install -g ionic cordova
-$ ionic start myBlank blank
+or in a simulator as a mobile app. 
+```
+ionic serve -l
 ```
 
-Then, to run it, cd into `myBlank` and run:
-
-```bash
-$ ionic cordova platform add ios
-$ ionic cordova run ios
+You can also compile to native code and side-load it onto your device
+```
+ionic cordova build ios
 ```
 
-Substitute ios for android if not on a Mac.
+### database dependancy
 
+This application uses Firebase ( https://firebase.google.com/ ) as a backend.
+
+1. Create a file in /src/environments/ named db-config.ts
+
+2. Follow the instructions at https://firebase.google.com/docs/web/setup to set up your instance
+
+3. Place the initialization config in the file created above

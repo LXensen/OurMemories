@@ -1,0 +1,39 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+                 <ion-icon name="menu"></ion-icon>
+              </button>
+    <ion-title>Sign Up</ion-title>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid fixed>
+    <form [formGroup]="SignUpForm" (ngSubmit)="onSignUp()" >
+      <ion-list>
+          <ion-item>
+              <ion-label fixed>Name</ion-label>
+              <ion-input type="text" formControlName="userName" [formGroup]="SignUpForm"></ion-input>
+            </ion-item>        
+        <ion-item>
+          <ion-label fixed>Mail</ion-label>
+          <ion-input type="email" formControlName="email" [formGroup]="SignUpForm"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label fixed>Password</ion-label>
+          <ion-input type="password" formControlName="password" [formGroup]="SignUpForm"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label fixed>Re-type Password</ion-label>
+          <ion-input type="password" formControlName="password2" [formGroup]="SignUpForm"></ion-input>
+        </ion-item>
+        <ion-item>
+           <button ion-button block type="submit" color="dark" [disabled]="!SignUpForm.valid">Sign up</button> 
+          <div class="alert alert-danger" *ngIf="!passwordsMatch">Password not match</div>
+        </ion-item> 
+      </ion-list>
+    </form>
+  </ion-grid>
+</ion-content>

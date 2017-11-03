@@ -1,0 +1,25 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+         <ion-icon name="menu"></ion-icon>
+      </button>
+    <ion-title>{{currentExperience.title}}</ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="imageSourceActionSheet()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="card-background-page">
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6 col-md-12 *ngFor="let memory of eventMemories | async" >
+          <img src="{{memory.url}}" alt="" (click)="selectMemory(memory)"/>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

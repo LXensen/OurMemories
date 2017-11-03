@@ -1,0 +1,24 @@
+page-searchcontactsmodal {
+    // .search-modal-page{
+    //     padding: 30px;
+    //     background: rgba(0,0,0,0.5)
+    // }
+    padding: 30px;
+    background: rgba(0,0,0,0.5);
+    .search-modal-page{
+        position: absolute;
+        top: 80px;
+        left: 5%;
+        display: block;
+        width: 90%;
+        height: 40%;
+        border-radius: 10px;
+    }
+
+    //item item-block item-ios item-input input-has-value item-input-has-value
+    .item item-block item-ios item-input{
+        border-top:0px;
+    }
+
+    $list-ios-margin-top: 0px;
+}

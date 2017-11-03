@@ -18,10 +18,12 @@ npm-debug.log*
 .tmp/
 .versions/
 coverage/
+functions/
 dist/
 node_modules/
 tmp/
 temp/
+src/environments/db-config.ts
 hooks/
 platforms/
 plugins/

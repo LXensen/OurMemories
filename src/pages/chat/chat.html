@@ -1,0 +1,38 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>
+        {{currentExperience.title}} Chat
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  <ion-content padding>
+
+  
+      <div class="message-wrap">
+          <div *ngFor="let chat of chats$ | async"
+                class="message"
+                [class.left]=" chat.userID != person.ID "
+                [class.right]=" chat.userID === person.ID ">
+              <img class="user-img" alt="" src="http://via.placeholder.com/50?text={{chat.name}}">
+              <!-- <ion-spinner name="dots" *ngIf="msg.status === 'pending'"></ion-spinner> -->
+              <div class="msg-detail">
+                  <div class="msg-info">
+                      <p>
+                          &nbsp;&nbsp;&nbsp;{{chat.time | date: 'shortTime'}}
+                      </p>
+                  </div>
+                  <div class="msg-content">
+                      <span class="triangle"></span>
+                      <p class="line-breaker ">{{chat.content}}</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </ion-content>
+  
+  <ion-footer>
+   <ion-item>
+    <ion-input type="text" placeholder="type here..." [(ngModel)]="messageContent"></ion-input>
+    <button ion-button clear item-right (click)="send()">Send</button>
+   </ion-item>
+  </ion-footer>

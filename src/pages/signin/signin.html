@@ -1,0 +1,32 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+             <ion-icon name="menu"></ion-icon>
+          </button>
+    <ion-title>Sign In</ion-title>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid fixed>
+    <form [formGroup]="SignInForm" (ngSubmit)="onSignIn()">
+      <ion-list>
+        <ion-item>
+          <ion-label fixed>Mail</ion-label>
+          <ion-input type="email" formControlName="email" [formGroup]="SignInForm"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label fixed>Password</ion-label>
+          <ion-input type="password" formControlName="password" [formGroup]="SignInForm"></ion-input>
+        </ion-item>
+        <ion-item>
+          <button ion-button block type="submit" color="dark" [disabled]="!SignInForm.valid">Sign in</button>
+          <h4>Don't have an account? Click <button ion-button clear (click)="goToSignUpPage()">here</button> to sign up</h4>
+        </ion-item>
+             
+      </ion-list>
+    </form> 
+  </ion-grid>
+</ion-content>

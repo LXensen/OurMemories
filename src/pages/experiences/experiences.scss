@@ -1,0 +1,53 @@
+page-experiences {
+.card-background-page {
+
+  ion-col.col{
+    max-width: 350px;
+  }
+  ion-card {
+    position: relative;
+    text-align: center;
+  }
+
+  // .card-title {
+  //   position: absolute;
+  //   top: 36%;
+  //   font-size: 1.5em;
+  //   width: 100%;
+  //   font-weight: bold;
+  //   color:red;
+  // }
+
+  // .card-title-mobile {
+  //   position: absolute;
+  //   top: 25%;
+  //   font-size: 1em;
+  //   width: 100%;
+  //   font-weight: bold;
+  //   color:red;
+  // }
+
+  // .card-subtitle {
+  //   font-size: 1.0em;
+  //   position: absolute;
+  //   top: 52%;
+  //   width: 100%;
+  //   color:red;
+  // }
+}
+
+#picture-count-badge{
+  background-color: white;
+  color :black;
+  position: relative;
+  top: 20px;
+  right:3px;
+}
+
+ $grid-max-widths: md;
+
+ .hideElement{
+  display: none !important;
+}
+
+}

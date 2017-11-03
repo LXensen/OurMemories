@@ -1,0 +1,22 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Find a Friend</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="search-modal-page" padding>
+  <ion-list>
+    <ion-item>
+    <ion-input type="text" (keydown)="search($event)" placeholder="Search"></ion-input>
+  </ion-item>
+  <div *ngFor="let contact of contacts" >
+    <h4>{{contact?.email}}</h4>
+  </div>
+<br />
+      <button ion-button block type="submit" color="dark">select</button>
+
+</ion-list>
+</ion-content>
